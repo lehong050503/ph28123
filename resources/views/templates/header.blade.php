@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <title>GREEN - Đưa bạn đi muôn nơi</title>
@@ -25,6 +24,7 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
+
     {{-- My code CSS --}}
     <link rel="stylesheet" href="{{ asset('css/mycss.css') }}">
 </head>
@@ -47,10 +47,10 @@
                         {{-- <a class="text-primary px-3" href="">
                             <i class="fas fa-user"></i>
                         </a> --}}
-                        <a class="text-primary px-3" href="">
+                        <a class="text-primary px-3" href="{{ url('/login') }}">
                             Login
                         </a>
-                        <a class="text-primary px-3" href="">
+                        <a class="text-primary px-3" href="{{ url('/register') }}">
                             Register 
                         </a>
                         
@@ -66,7 +66,7 @@
     <div class="container-fluid position-relative nav-bar p-0">
         <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
             <nav class="navbar navbar-expand-lg bg-light navbar-light shadow-lg py-3 py-lg-0 pl-3 pl-lg-5">
-                <a href="" class="navbar-brand">
+                <a href="{{ url('/') }}" class="navbar-brand">
                     <h1 class="m-0 text-primary"><span class="text-dark">GRE</span>EN</h1>
                 </a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -74,27 +74,30 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
                     <div class="navbar-nav ml-auto py-0">
-                        <a href="index.html" class="nav-item nav-link active">Home</a>
-                        <a href="about.html" class="nav-item nav-link">About</a>
-                        <a href="service.html" class="nav-item nav-link">Services</a>
-                        <a href="package.html" class="nav-item nav-link">Tour Packages</a>
+                        <a href="{{ url('/') }}" class="nav-item nav-link active">Home</a>
+                        <a href="{{ url('/') }}" class="nav-item nav-link">About</a>
+                        <a href="{{ url('/') }}" class="nav-item nav-link">Services</a>
+                        <a href="{{ url('/') }}" class="nav-item nav-link">Tour Packages</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu border-0 rounded-0 m-0">
-                                <a href="blog.html" class="dropdown-item">Blog Grid</a>
-                                <a href="single.html" class="dropdown-item">Blog Detail</a>
-                                <a href="destination.html" class="dropdown-item">Destination</a>
-                                <a href="guide.html" class="dropdown-item">Travel Guides</a>
-                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                                <a href="{{ url('/') }}" class="dropdown-item">Blog Grid</a>
+                                <a href="{{ url('/') }}" class="dropdown-item">Blog Detail</a>
+                                <a href="{{ url('/') }}" class="dropdown-item">Destination</a>
+                                <a href="{{ url('/') }}" class="dropdown-item">Travel Guides</a>
+                                <a href="{{ url('/') }}" class="dropdown-item">Testimonial</a>
                             </div>
                         </div>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="{{ url('/') }}" class="nav-item nav-link">Contact</a>
                     </div>
                 </div>
             </nav>
         </div>
     </div>
     <!-- Navbar End -->
+
+
+ 
 
 
     
