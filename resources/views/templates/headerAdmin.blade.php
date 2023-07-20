@@ -376,12 +376,37 @@
                                     </li>
                                 </ul> --}}
                             </li>
-
+                            <li>
+                                <a href="{{ route('listAir') }}" class="waves-effect">
+                                    <i class="remixicon-file-copy-2-line"></i>
+                                    <span> Airlines </span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                {{-- <ul class="nav-second-level" aria-expanded="false">
+                                    <li>
+                                        <a href="pages-starter.html">Starter</a>
+                                    </li>
+                                </ul> --}}
+                            </li>
+                            <li>
+                                <a href="{{ route('listAport') }}" class="waves-effect">
+                                    <i class="remixicon-file-copy-2-line"></i>
+                                    <span> Airports </span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                {{-- <ul class="nav-second-level" aria-expanded="false">
+                                    <li>
+                                        <a href="pages-starter.html">Starter</a>
+                                    </li>
+                                </ul> --}}
+                            </li>
+                            
                             <li>
                                 <a href="javascript: void(0);" class="waves-effect">
                                     <i class="remixicon-layout-line"></i>
                                     {{-- <span class="badge badge-pink float-right">New</span> --}}
                                     <span> Flights </span>
+                                    <span class="menu-arrow"></span>
                                 </a>
                                 {{-- <ul class="nav-second-level" aria-expanded="false">
                                     <li>
@@ -402,32 +427,6 @@
                                     </li>
                                 </ul> --}}
                             </li>
-
-                            <li>
-                                <a href="{{ route('listAir') }}" class="waves-effect">
-                                    <i class="remixicon-file-copy-2-line"></i>
-                                    <span> Airlines </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                {{-- <ul class="nav-second-level" aria-expanded="false">
-                                    <li>
-                                        <a href="pages-starter.html">Starter</a>
-                                    </li>
-                                </ul> --}}
-                            </li>
-                            <li>
-                                <a href="javascript: void(0);" class="waves-effect">
-                                    <i class="remixicon-file-copy-2-line"></i>
-                                    <span> Airports </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                {{-- <ul class="nav-second-level" aria-expanded="false">
-                                    <li>
-                                        <a href="pages-starter.html">Starter</a>
-                                    </li>
-                                </ul> --}}
-                            </li>
- 
 
                         </ul>
 

@@ -17,11 +17,11 @@
             <div class="page-title-right">
                 <ol class="breadcrumb m-0">
                     <li class="breadcrumb-item"><a href="javascript: void(0);">Green</a></li>
-                    <li class="breadcrumb-item"><a href="javascript: void(0);">Airlines</a></li>
-                    <li class="breadcrumb-item active">Airlines</li>
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">Airports</a></li>
+                    <li class="breadcrumb-item active">Airports</li>
                 </ol>
             </div>
-            <h4 class="page-title">Datatables Airlines</h4>
+            <h4 class="page-title">Datatables Airports</h4>
         </div>
     </div>
 </div>     
@@ -30,35 +30,35 @@
 <div class="row">
     <div class="col-lg-12">
         <div class="card-box">
-            <h4 class="header-title">Add New Airlines</h4>
+            <h4 class="header-title">Add New Airports</h4>
             <p class="sub-header">
                 Parsley is a javascript form validation library. It helps you provide your users with feedback on their form submission before sending it to your server.
             </p>
 
-            <form class="parsley-form" id="postEditAir" action="{{ route('editAir',['id'=>$airlines->id_airline])}}" method="POST" enctype="multipart/form-data">
+            <form class="parsley-form" id="postEditAport" action="{{ route('editAport',['id'=>$airport->id_airport])}}" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 <div class="form-group">
-                    <label>Name</label>
-                    <input type="text" class="form-control" name="name" value="{{ $airlines->name }}" placeholder="Type something">
-                    <p class="help-block text-danger"></p>
-                </div>
-                <!-- Nhúng đoạn này vào view add hoặc edit -->
-                <div class="form-group">
-                    <label>Logo Url</label>
+                    <label>Code</label>
+                    <input type="text" class="form-control" name="code" value="{{ $airport->code }}" placeholder="Type something">
                     
-                    <div class="col-md-9 col-sm-8">
-                        <div class="row">
-                            <div class="col-xs-6">
-                                <img id="mat_truoc_preview" src="{{ $airlines->logo_url?''.Storage::url($airlines->logo_url):'' }}"
-                                    style="max-width: 200px; height:100px; margin-bottom: 10px;" class="img-fluid"/>
-                                <input type="file" name="logo_url" accept="image/*"
-                                    class="form-control-file @error('logo_url') is-invalid @enderror" id="cmt_truoc">
-                                
-                            </div>
-                        </div>
-                    </div>
                 </div>
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" class="form-control" name="name" value="{{ $airport->name }}" placeholder="Type something">
+                    
+                </div>
+                <div class="form-group">
+                    <label>City</label>
+                    <input type="text" class="form-control" name="city" value="{{ $airport->city }}" placeholder="Type something">
+                    
+                </div>
+                <div class="form-group">
+                    <label>Country</label>
+                    <input type="text" class="form-control" name="country" value="{{ $airport->country }}" placeholder="Type something">
+                    
+                </div>
+                
                 <div class="form-group mb-0">
                     <div>
                         <button type="submit" class="btn btn-primary waves-effect waves-light mr-1">
@@ -95,24 +95,5 @@
     <script src="assets\libs\bootstrap-touchspin\jquery.bootstrap-touchspin.min.js"></script>
     <script src="assets\libs\jquery-mask-plugin\jquery.mask.min.js"></script>
 
-    <script>
-        $(function(){
-            function readURL(input, selector) {
-                if (input.files && input.files[0]) {
-                    let reader = new FileReader();
-
-                    reader.onload = function (e) {
-                        $(selector).attr('src', e.target.result);
-                    };
-
-                    reader.readAsDataURL(input.files[0]);
-                }
-            }
-            $("#cmt_truoc").change(function () { // id của input file
-                readURL(this, '#mat_truoc_preview'); // id của anh
-            });
-
-        });
-    </script>
-    {!! JsValidator::formRequest('App\Http\Requests\AirlineRequest','#postEditAir') !!}
+    {!! JsValidator::formRequest('App\Http\Requests\AirportRequest','#postEditAport') !!}
 @endsection

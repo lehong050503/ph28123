@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AirlineController;
+use App\Http\Controllers\AirportController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -59,6 +60,16 @@ Route::group(['prefix' => 'admin'], function (){
         Route::get('/edit/{id}',[AirlineController::class,'getEdit'])->name('editAir');
         Route::post('/edit/{id}',[AirlineController::class,'postEdit'])->name('editAir');
         Route::get('/delete/{id}',[AirlineController::class,'deleteAir'])->name('deleteAir');
+    });
+
+    // Airport Administration
+    Route::prefix('airport')->group(function(){
+        Route::get('/list',[AirportController::class,'listAport'])->name('listAport');
+        Route::get('/add',[AirportController::class,'getAdd'])->name('addAport');
+        Route::post('/add',[AirportController::class,'postAdd'])->name('addAport');
+        Route::get('/edit/{id}',[AirportController::class,'getEdit'])->name('editAport');
+        Route::post('/edit/{id}',[AirportController::class,'postEdit'])->name('editAport');
+        Route::get('/delete/{id}',[AirportController::class,'deleteAport'])->name('deleteAport');
     });
 
 });

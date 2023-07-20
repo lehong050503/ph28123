@@ -114,5 +114,6 @@
 
         });
     </script>
+    {!! JsValidator::formRequest('App\Http\Requests\AirlineRequest','#postAddAir') !!}
     
 @endsection

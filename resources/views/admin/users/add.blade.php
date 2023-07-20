@@ -144,4 +144,5 @@
     <script src="assets\libs\bootstrap-touchspin\jquery.bootstrap-touchspin.min.js"></script>
     <script src="assets\libs\jquery-mask-plugin\jquery.mask.min.js"></script>
     
+    {!! JsValidator::formRequest('App\Http\Requests\UserRequest','#postAddUser') !!}
 @endsection

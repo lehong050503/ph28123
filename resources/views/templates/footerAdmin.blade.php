@@ -210,9 +210,9 @@
 <script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
 
 {{-- {!! JsValidator::formRequest('App\Http\Requests\AccountRequest') !!} --}}
-{!! JsValidator::formRequest('App\Http\Requests\UserRequest','#postAddUser') !!}
-{!! JsValidator::formRequest('App\Http\Requests\EditUserRequest','#postEditUser') !!}
-{!! JsValidator::formRequest('App\Http\Requests\AirlineRequest','#postAddAir') !!}
+
+
+
 
 </body>
 </html>
