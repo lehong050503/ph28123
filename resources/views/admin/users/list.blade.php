@@ -70,7 +70,7 @@
                             
                                 <tbody>
                                     @php
-                                        $stt = 1
+                                        $stt = 1;
                                     @endphp
                                     @foreach ($users as $user)
                                         
@@ -95,7 +95,9 @@
                                         <td>{{ $user->password }}</td>
                                         
                                     </tr>
-
+                                    @php
+                                        $stt++;
+                                    @endphp
                                     @endforeach
                                 </tbody>
                             </table>

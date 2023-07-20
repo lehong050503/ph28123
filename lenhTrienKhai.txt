@@ -6,3 +6,16 @@ Link : https://github.com/proengsoft/laravel-jsvalidation/wiki
 Thông báo đẹp hơn
 Link: https://jquery-plugins.net/toastr-simple-javascript-toast-notifications#google_vignette
 Cài đặt : https://github.com/yoeunes/toastr
+
+---------- Helper upload file ----------
+- Tạo folder Helpers
+- Tạo file system.php có hàm uploadFile
+- Thêm đoạn dưới vào phần autoload trong composer.json 
+        "files": [
+            "app/Helpers/system.php"
+        ],
+- Chạy lệnh composer dump-autoload
+.
+.
+.
+- Chạy php artisan storage:link để tạo folder ảnh 

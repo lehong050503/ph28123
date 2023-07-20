@@ -404,7 +404,7 @@
                             </li>
 
                             <li>
-                                <a href="javascript: void(0);" class="waves-effect">
+                                <a href="{{ route('listAir') }}" class="waves-effect">
                                     <i class="remixicon-file-copy-2-line"></i>
                                     <span> Airlines </span>
                                     <span class="menu-arrow"></span>

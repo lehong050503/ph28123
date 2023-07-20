@@ -199,6 +199,10 @@
 
 <!-- App js -->
 <script src="{{ asset('js\app.min.js') }}"></script>
+{{-- Upload image --}}
+<script src="{{ asset('libs/jquery/dist/jquery.min.js') }}"></script>
+
+<script src="{{ asset('libs/input-mask/jquery.inputmask.js') }}"></script>
 
 @yield('js')
 
@@ -208,6 +212,7 @@
 {{-- {!! JsValidator::formRequest('App\Http\Requests\AccountRequest') !!} --}}
 {!! JsValidator::formRequest('App\Http\Requests\UserRequest','#postAddUser') !!}
 {!! JsValidator::formRequest('App\Http\Requests\EditUserRequest','#postEditUser') !!}
+{!! JsValidator::formRequest('App\Http\Requests\AirlineRequest','#postAddAir') !!}
 
 </body>
 </html>
