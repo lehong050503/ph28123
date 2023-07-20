@@ -16,6 +16,11 @@
         <link href="{{ asset('css\icons.min.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('css\app.min.css') }}" rel="stylesheet" type="text/css">
 
+        @yield('css')
+
+        {{-- My code CSS --}}
+        <link rel="stylesheet" href="{{ asset('css/mycss.css') }}">
+
     </head>
 
     <body>
@@ -162,12 +167,16 @@
                     </li>
 
                     <li class="dropdown notification-list">
+                        @if (Auth::check())
+                        
                         <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                             <img src="{{ asset('images\users\avatar-1.jpg') }}" alt="user-image" class="rounded-circle">
                             <span class="pro-user-name ml-1">
-                                Nik Patel <i class="mdi mdi-chevron-down"></i> 
+                                {{ Auth::user()->username }} <i class="mdi mdi-chevron-down"></i> 
                             </span>
                         </a>
+                        
+                        @endif
                         <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                             <!-- item-->
                             <div class="dropdown-header noti-title">
@@ -201,7 +210,7 @@
                             <div class="dropdown-divider"></div>
 
                             <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <a href="{{ url('/logout')}}" class="dropdown-item notify-item">
                                 <i class="remixicon-logout-box-line"></i>
                                 <span>Logout</span>
                             </a>
@@ -221,14 +230,13 @@
 
                 <!-- LOGO -->
                 <div class="logo-box">
-                    <a href="index.html" class="logo text-center">
-                        <span class="logo-lg">
-                            <img src="{{ asset('images\logo-light.png') }}" alt="" height="20">
-                            <!-- <span class="logo-lg-text-light">Xeria</span> -->
+                    <a href="{{ route('admin.dashboard') }}" class="logo text-center">
+                        {{-- style="color: white; font-weight:900; font-size: 30px;" --}}
+                        <span class="logo-lg" >
+                            <span class="logo-lg-text-light">GREEN</span>
                         </span>
-                        <span class="logo-sm">
-                            <!-- <span class="logo-sm-text-dark">X</span> -->
-                            <img src="{{ asset('images\logo-sm.png') }}" alt="" height="24">
+                        <span class="logo-sm" >
+                            <span class="logo-sm-text-dark">GREEN</span>
                         </span>
                     </a>
                 </div>
@@ -347,9 +355,9 @@
                             <li class="menu-title">Navigation</li>
 
                             <li>
-                                <a href="javascript: void(0);" class="waves-effect">
+                                <a href="{{ route('admin.dashboard') }}" class="waves-effect">
                                     <i class="remixicon-dashboard-line"></i>
-                                    <span class="badge badge-success badge-pill float-right">2</span>
+                                    {{-- <span class="badge badge-success badge-pill float-right">2</span> --}}
                                     <span> Dashboards </span>
                                 </a>
                                 
@@ -357,22 +365,22 @@
 
                             <li class="menu-title mt-2">Managers</li>
                             <li>
-                                <a href="javascript: void(0);" class="waves-effect">
+                                <a href="{{ route('listUser') }}" class="waves-effect">
                                     <i class="remixicon-stack-line"></i>
                                     <span> Account - User </span>
                                     <span class="menu-arrow"></span>
                                 </a>
-                                <ul class="nav-second-level" aria-expanded="false">
+                                {{-- <ul class="nav-second-level" aria-expanded="false">
                                     <li>
                                         <a href="apps-kanbanboard.html">Kanban Board</a>
                                     </li>
-                                </ul>
+                                </ul> --}}
                             </li>
 
                             <li>
                                 <a href="javascript: void(0);" class="waves-effect">
                                     <i class="remixicon-layout-line"></i>
-                                    <span class="badge badge-pink float-right">New</span>
+                                    {{-- <span class="badge badge-pink float-right">New</span> --}}
                                     <span> Flights </span>
                                 </a>
                                 {{-- <ul class="nav-second-level" aria-expanded="false">
@@ -433,3 +441,12 @@
 
             </div>
             <!-- Left Sidebar End -->
+            
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    <!-- Start Content-->
+                    <div class="container-fluid">

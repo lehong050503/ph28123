@@ -1,8 +1,12 @@
 
-
+            
+        </div>
+    </div>
 </div>
-<!-- END wrapper -->
 
+<!-- ============================================================== -->
+<!-- End Page content -->
+<!-- ============================================================== -->
 <!-- Right Sidebar -->
 <div class="right-bar">
     <div class="rightbar-title">
@@ -195,6 +199,15 @@
 
 <!-- App js -->
 <script src="{{ asset('js\app.min.js') }}"></script>
+
+@yield('js')
+
+<!-- Laravel Javascript Validation -->
+<script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
+
+{{-- {!! JsValidator::formRequest('App\Http\Requests\AccountRequest') !!} --}}
+{!! JsValidator::formRequest('App\Http\Requests\UserRequest','#postAddUser') !!}
+{!! JsValidator::formRequest('App\Http\Requests\EditUserRequest','#postEditUser') !!}
 
 </body>
 </html>

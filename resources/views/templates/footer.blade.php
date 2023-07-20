@@ -93,6 +93,12 @@
 
     <!-- My code Javascript -->
     <script src="{{ asset('js/myjs.js') }}"></script>
+
+    <!-- Laravel Javascript Validation -->
+    <script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
+
+    {!! JsValidator::formRequest('App\Http\Requests\UserRequest','#registerForm') !!}
+
 </body>
 
 </html>

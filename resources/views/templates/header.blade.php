@@ -43,16 +43,31 @@
                 </div>
                 <div class="col-lg-6 text-center text-lg-right">
                     <div class="d-inline-flex align-items-center">
-                        
-                        {{-- <a class="text-primary px-3" href="">
-                            <i class="fas fa-user"></i>
-                        </a> --}}
-                        <a class="text-primary px-3" href="{{ url('/login') }}">
-                            Login
-                        </a>
-                        <a class="text-primary px-3" href="{{ url('/register') }}">
-                            Register 
-                        </a>
+                        @if (Auth::check())
+                            <a class="text-primary px-3" href="" >
+                                
+                                <div class="nav-item dropdown">
+                                    
+                                    <a href="{{ url('/') }}" class="dropdown-toggle" data-toggle="dropdown" style="">
+                                        <i class="fas fa-user" style="margin-right: 10px;font-size: 20px;"></i>  {{ Auth::user()->username }}  
+                                    </a>
+                                    <div class="dropdown-menu border-0 rounded-0 m-0">
+                                        <a href="{{ url('/') }}" class="dropdown-item">Blog Grid</a>
+                                        <a href="{{ url('/logout') }}" class="dropdown-item">Log out</a>
+                                        {{-- <a href="{{ url('/') }}" class="dropdown-item">Destination</a>
+                                        <a href="{{ url('/') }}" class="dropdown-item">Travel Guides</a>
+                                        <a href="{{ url('/') }}" class="dropdown-item">Testimonial</a> --}}
+                                    </div>
+                                </div>
+                            </a>    
+                        @else
+                            <a class="text-primary px-3" href="{{ url('/login') }}">
+                                Login
+                            </a>
+                            <a class="text-primary px-3" href="{{ url('/register') }}">
+                                Register 
+                            </a>  
+                        @endif
                         
                     </div>
                 </div>

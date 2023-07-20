@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('username');
             $table->string('full_name');
             $table->date('date_of_birth');
-            $table->string('emaill')->unique();
+            $table->string('email')->unique();
             $table->string('address')->nullable();
             $table->string('phone_number');
             $table->string('password');
@@ -29,6 +29,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

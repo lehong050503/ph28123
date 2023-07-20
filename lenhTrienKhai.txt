@@ -1,0 +1,8 @@
+----------Laravel Javascript Validation----------
+Dùng để validate mà không bị load lại trang
+Link : https://github.com/proengsoft/laravel-jsvalidation/wiki
+
+----------Thư viện Toastr ----------
+Thông báo đẹp hơn
+Link: https://jquery-plugins.net/toastr-simple-javascript-toast-notifications#google_vignette
+Cài đặt : https://github.com/yoeunes/toastr

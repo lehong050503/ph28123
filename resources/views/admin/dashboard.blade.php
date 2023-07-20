@@ -1,15 +1,5 @@
 @extends('templates.appAdmin')
 @section('content')
-            <!-- ============================================================== -->
-            <!-- Start Page Content here -->
-            <!-- ============================================================== -->
-
-            <div class="content-page">
-                <div class="content">
-
-                    <!-- Start Content-->
-                    <div class="container-fluid">
-                        
                         <!-- start page title -->
                         <div class="row">
                             <div class="col-12">
@@ -551,10 +541,7 @@
                             </div> <!-- end col -->
                         </div>
                         <!-- end row -->
-                        
-                    </div> <!-- container -->
 
-                </div> <!-- content -->
 
                 <!-- Footer Start -->
                 <footer class="footer">
@@ -575,11 +562,6 @@
                 </footer>
                 <!-- end Footer -->
 
-            </div>
-
-            <!-- ============================================================== -->
-            <!-- End Page content -->
-            <!-- ============================================================== -->
 
 
 @endsection
