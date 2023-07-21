@@ -402,7 +402,7 @@
                             </li>
                             
                             <li>
-                                <a href="javascript: void(0);" class="waves-effect">
+                                <a href="{{ route('listFlight') }}" class="waves-effect">
                                     <i class="remixicon-layout-line"></i>
                                     {{-- <span class="badge badge-pink float-right">New</span> --}}
                                     <span> Flights </span>

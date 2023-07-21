@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AirlineController;
 use App\Http\Controllers\AirportController;
+use App\Http\Controllers\FlightsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -71,6 +72,36 @@ Route::group(['prefix' => 'admin'], function (){
         Route::post('/edit/{id}',[AirportController::class,'postEdit'])->name('editAport');
         Route::get('/delete/{id}',[AirportController::class,'deleteAport'])->name('deleteAport');
     });
+
+    // Flight Administration
+    Route::prefix('flights')->group(function(){
+        Route::get('/list',[FlightsController::class,'listFlight'])->name('listFlight');
+        Route::get('/add',[FlightsController::class,'getAdd'])->name('addFlight');
+        Route::post('/add',[FlightsController::class,'postAdd'])->name('addFlight');
+        Route::get('/edit/{id}',[FlightsController::class,'getEdit'])->name('editFlight');
+        Route::post('/edit/{id}',[FlightsController::class,'postEdit'])->name('editFlight');
+        Route::get('/delete/{id}',[FlightsController::class,'deleteFlight'])->name('deleteFlight');
+    });
+    
+    // Flight Administration
+    // Route::prefix('flight')->group(function(){
+    //     Route::get('/list',[,''])->name('');
+    //     Route::get('/add',[,''])->name('');
+    //     Route::post('/add',[,''])->name('');
+    //     Route::get('/edit/{id}',[,''])->name('');
+    //     Route::post('/edit/{id}',[,''])->name('');
+    //     Route::get('/delete/{id}',[,''])->name('');
+    // });
+
+    // Flight Administration
+    // Route::prefix('flight')->group(function(){
+    //     Route::get('/list',[,''])->name('');
+    //     Route::get('/add',[,''])->name('');
+    //     Route::post('/add',[,''])->name('');
+    //     Route::get('/edit/{id}',[,''])->name('');
+    //     Route::post('/edit/{id}',[,''])->name('');
+    //     Route::get('/delete/{id}',[,''])->name('');
+    // });
 
 });
 
