@@ -71,13 +71,19 @@
                                         <td>{{ $stt }}</td>
                                         <td>
                                             {{-- {{ $fly->airlines->id_airline == $airlines->id_airline ? $fly->airlines->name : '' }} --}}
-                                            {{ $fly->id_airline == $airlines->id_airline ? $airlines->name : ''}}
+                                            @foreach ($airlines as $air)
+                                                {{ $fly->id_airline == $air->id_airline ? $air->name : '' }}
+                                            @endforeach
                                         </td>
                                         <td>
-                                            {{ $fly->id_form_airport }}
+                                            @foreach ($airport as $air)
+                                                {{ $fly->id_form_airport == $air->id_airport ? $air->name : '' }}
+                                            @endforeach
                                         </td>
                                         <td>
-                                            {{ $fly->id_to_airport }}
+                                            @foreach ($airport as $air)
+                                                {{ $fly->id_to_airport == $air->id_airport ? $air->name : '' }}
+                                            @endforeach
                                         </td>
                                         <td>{{ $fly->departure_time }}</td>
                                         <td>{{ $fly->arrival_time }}</td>
