@@ -6,17 +6,16 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Flight extends Model
+class Ticket extends Model
 {
     use HasFactory, SoftDeletes;
-    protected $table = 'flights';
+    protected $table = 'tickets';
     protected $fillable = [
-        'id_airline',
-        'id_form_airport',
-        'id_to_airport',
-        'departure_time',
-        'arrival_time',
+        'id_flight',
+        'image',
+        'class',
+        'price',
         'seat',
-        'status_flight'
+        'status_ticket',
     ];
 }

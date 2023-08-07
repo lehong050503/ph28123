@@ -23,6 +23,7 @@ return new class extends Migration
             $table->foreign('id_to_airport')->references('id_airport')->on('airport');
             $table->string('departure_time');
             $table->string('arrival_time');
+            $table->string('seat');
             $table->string('status_flight');
             $table->timestamps();
             $table->softDeletes();

@@ -45,7 +45,7 @@
         <div class="container pb-5">
             <div class="bg-light shadow formDatVe" style="padding: 30px;">
                 
-                <form action="" method="">
+                <div>
 
                     <input type="radio" class="radio" id="one" name="flight-type" checked>
                     <input type="radio" class="radio" id="two" name="flight-type">
@@ -54,144 +54,150 @@
                     <div class="tabs">
                         <label class="tab" id="one-tab" for="one">Roundtrip</label>
                         <label class="tab" id="two-tab" for="two">One way</label>
-                        <label class="tab" id="three-tab" for="three">Multi-City</label>
+                        {{-- <label class="tab" id="three-tab" for="three">Multi-City</label> --}}
                     </div>
                             
                     <div class="panels">
                         {{-- Form Round Trip --}}
+                        <form action="{{ route('searchFlight')}}" method="GET">
+                            @csrf
 
-                        <div class="panel" id="one-panel">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <span class="form-label">FLYING FROM</span>
-                                        <input class="form-control" type="text" placeholder="City or airport">
+                            <div class="panel" id="one-panel">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <span class="form-label">FLYING FROM</span>
+                                            <input class="form-control" name="flying_from" type="text" placeholder="City or airport">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <span class="form-label">FLYING TO</span>
+                                            <input class="form-control" name="flying_to" type="text" placeholder="City or airport">
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <span class="form-label">FLYING TO</span>
-                                        <input class="form-control" type="text" placeholder="City or airport">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <span class="form-label">Adults (18+)</span>
+                                            <input class="form-control" type="number" name="quantity" placeholder="0">
+                                            <span class="select-arrow"></span>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <span class="form-label">Adults (18+)</span>
-                                        <input class="form-control" type="number" placeholder="0">
-                                        <span class="select-arrow"></span>
+                                    {{-- <div class="col-md-4">
+                                        <div class="form-group">
+                                            <span class="form-label">Children (0-17)</span>
+                                            <input class="form-control" type="number" placeholder="0">
+                                            <span class="select-arrow"></span>
+                                        </div>
+                                    </div> --}}
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <span class="form-label">Travel class</span>
+                                            <select class="form-control">
+                                                <option>Economy class</option>
+                                                <option>Business class</option>
+                                                <option>First class</option>
+                                            </select>
+                                            <span class="select-arrow"></span>
+                                        </div>
                                     </div>
+                                    
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <span class="form-label">Children (0-17)</span>
-                                        <input class="form-control" type="number" placeholder="0">
-                                        <span class="select-arrow"></span>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <span class="form-label">DEPARTING</span>
+                                            <input class="form-control" name="departure_time" type="date" >
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <span class="form-label">Travel class</span>
-                                        <select class="form-control">
-                                            <option>Economy class</option>
-                                            <option>Business class</option>
-                                            <option>First class</option>
-                                        </select>
-                                        <span class="select-arrow"></span>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <span class="form-label">RETURNING</span>
+                                            <input class="form-control" name="arrival_time" type="date" >
+                                        </div>
                                     </div>
                                 </div>
                                 
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <span class="form-label">DEPARTING</span>
-                                        <input class="form-control" type="date" required>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <span class="form-label">RETURNING</span>
-                                        <input class="form-control" type="date" required>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-btn">
-                                <button type="button" class="submit-btn">Show flights</button>
+                                <button class="submit-btn">Show flights</button>
+
                             </div>
 
-                        </div>
-
+                        </form>
+                        
                         {{-- Form One Way --}}
 
-                        <div class="panel" id="two-panel">
+                        <form action="{{ route('searchFlight')}}" method="GET">
+                            @csrf
 
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <span class="form-label">FLYING FROM</span>
-                                        <input class="form-control" type="text" placeholder="City or airport">
+                            <div class="panel" id="two-panel">
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <span class="form-label">FLYING FROM</span>
+                                            <input class="form-control" type="text" name="flying_from" placeholder="City or airport">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <span class="form-label">FLYING TO</span>
+                                            <input class="form-control" type="text" name="flying_to" placeholder="City or airport">
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <span class="form-label">FLYING TO</span>
-                                        <input class="form-control" type="text" placeholder="City or airport">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <span class="form-label">Adults (18+)</span>
+                                            <input class="form-control" type="number" name="quantity" placeholder="0">
+                                            <span class="select-arrow"></span>
+                                        </div>
+                                    </div>
+                                    {{-- <div class="col-md-4">
+                                        <div class="form-group">
+                                            <span class="form-label">Children (0-17)</span>
+                                            <input class="form-control" type="number" placeholder="0">
+                                            <span class="select-arrow"></span>
+                                        </div>
+                                    </div> --}}
+                                    
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <span class="form-label">Travel class</span>
+                                            <select class="form-control">
+                                                <option>Economy class</option>
+                                                <option>Business class</option>
+                                                <option>First class</option>
+                                            </select>
+                                            <span class="select-arrow"></span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <span class="form-label">Adults (18+)</span>
-                                        <input class="form-control" type="number" placeholder="0">
-                                        <span class="select-arrow"></span>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <span class="form-label">DEPARTING</span>
+                                            <input class="form-control" type="date" name="departure_time">
+                                        </div>
                                     </div>
+                                    {{-- <div class="col-md-6">
+                                        <div class="form-group">
+                                            <span class="form-label">RETURNING</span>
+                                            <input class="form-control" type="date" required>
+                                        </div>
+                                    </div> --}}
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <span class="form-label">Children (0-17)</span>
-                                        <input class="form-control" type="number" placeholder="0">
-                                        <span class="select-arrow"></span>
-                                    </div>
-                                </div>
+                                <button class="submit-btn">Show flights</button>
                                 
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <span class="form-label">Travel class</span>
-                                        <select class="form-control">
-                                            <option>Economy class</option>
-                                            <option>Business class</option>
-                                            <option>First class</option>
-                                        </select>
-                                        <span class="select-arrow"></span>
-                                    </div>
-                                </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <span class="form-label">DEPARTING</span>
-                                        <input class="form-control" type="date" required>
-                                    </div>
-                                </div>
-                                {{-- <div class="col-md-6">
-                                    <div class="form-group">
-                                        <span class="form-label">RETURNING</span>
-                                        <input class="form-control" type="date" required>
-                                    </div>
-                                </div> --}}
-                            </div>
-                            <div class="form-btn">
-                                <button type="button" class="submit-btn">Show flights</button>
-                            </div>
-                            
-                        </div>
+
+                        </form>
 
                         {{-- Form Multi City --}}
 
-                        <div class="panel" id="three-panel">
+                        {{-- <div class="panel" id="three-panel">
                             <div class="row">
                                 <div class="col-md-6">
                                     <h4>FLIGHT 1</h4>
@@ -279,11 +285,11 @@
                                 <button type="button" class="submit-btn">Show flights</button>
                             </div>
                             
-                        </div>
+                        </div> --}}
 
                     </div>
 
-                </form>
+                </div>
             </div>
         </div>
     </div>

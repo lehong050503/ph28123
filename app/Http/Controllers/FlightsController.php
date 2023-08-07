@@ -29,7 +29,7 @@ class FlightsController extends Controller
     public function postAdd(FlightRequest $request){
         if($request->isMethod('POST')){
             $param = $request->except('_token');
-
+            
             $flights = Flight::create($param);
 
             if($flights){

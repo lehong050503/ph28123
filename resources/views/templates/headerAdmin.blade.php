@@ -416,9 +416,21 @@
                             </li>
                 
                             <li>
-                                <a href="javascript: void(0);" class="waves-effect">
+                                <a href="{{ route('listTicket') }}" class="waves-effect">
                                     <i class="remixicon-mail-open-line"></i>
                                     <span> Ticket </span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                {{-- <ul class="nav-second-level" aria-expanded="false">
+                                    <li>
+                                        <a href="email-inbox.html">Inbox</a>
+                                    </li>
+                                </ul> --}}
+                            </li>
+                            <li>
+                                <a href="{{ route('listBookTicket') }}" class="waves-effect">
+                                    <i class="remixicon-mail-open-line"></i>
+                                    <span> Book Ticket </span>
                                     <span class="menu-arrow"></span>
                                 </a>
                                 {{-- <ul class="nav-second-level" aria-expanded="false">

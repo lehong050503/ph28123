@@ -17,11 +17,11 @@
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item"><a href="javascript: void(0);">Green</a></li>
-                                <li class="breadcrumb-item"><a href="javascript: void(0);">Flights</a></li>
-                                <li class="breadcrumb-item active">Flights</li>
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">Booking Tickets</a></li>
+                                <li class="breadcrumb-item active">Tickets</li>
                             </ol>
                         </div>
-                        <h4 class="page-title">Datatables Flights</h4>
+                        <h4 class="page-title">Datatables Booking</h4>
                     </div>
                 </div>
             </div>     
@@ -34,13 +34,13 @@
                             
                             <div style="display: flex; justify-content:space-around;">
                                 <div>
-                                   <h4 class="header-title">Database Flights</h4>
+                                   <h4 class="header-title">Database Booking</h4>
                                     <p class="text-muted font-13 mb-4">
                                         The Buttons extension for DataTables provides a common set of options, API methods and styling to display buttons on a page
                                         that will interact with a DataTable. The core library provides the based framework upon which plug-ins can built.
                                     </p>  
                                 </div>
-                                <a href="{{ route('addFlight') }}" class="btn btn-success  px-3 mb-0 h-50" style="background: #1ABC9C;" >Add</a>
+                                <a href="{{ route('home') }}" class="btn btn-success  px-3 mb-0 h-50" style="background: #1ABC9C;" >HOME</a>
                                   
                             </div>
                             
@@ -49,14 +49,13 @@
                                 <thead>
                                     <tr>
                                         <th>STT</th>
-                                        <th>Airline</th>
-                                        <th>From Airport</th>
-                                        <th>To Airport</th>
-                                        <th>Departure Time</th>
-                                        <th>Arrival Time</th>
-                                        <th>Status Flight</th>
+                                        <th>ID Ticket</th>
+                                        <th>ID User</th>
+                                        <th>Quantity</th>
+                                        <th>Payment Method</th>
+                                        <th>Price</th>
+                                        <th>Date</th>
                                         <th>Action</th>
-                                        <th>Seat</th>
                                         
                                     </tr>
                                 </thead>
@@ -66,34 +65,21 @@
                                     @php
                                         $stt = 1;
                                     @endphp
-                                    @foreach ($flights as $fly)
+                                    @foreach ($books as $tic)
                                         
                                     <tr>
                                         <td>{{ $stt }}</td>
+                                        <td>{{ $tic->id_ticket }}</td>
+                                        <td>{{ $tic->id_user }}</td>
+                                        <td>{{ $tic->quantity }}</td>
+                                        <td>{{ $tic->payment_method }}</td>
+                                        <td>{{ $tic->total_price }}</td>
+                                        <td>{{ $tic->created_at }}</td>
                                         <td>
-                                            {{-- {{ $fly->airlines->id_airline == $airlines->id_airline ? $fly->airlines->name : '' }} --}}
-                                            @foreach ($airlines as $air)
-                                                {{ $fly->id_airline == $air->id_airline ? $air->name : '' }}
-                                            @endforeach
+                                            
+                                            <a href="" class="btn btn-info">Detail</a>
                                         </td>
-                                        <td>
-                                            @foreach ($airport as $air)
-                                                {{ $fly->id_form_airport == $air->id_airport ? $air->name : '' }}
-                                            @endforeach
-                                        </td>
-                                        <td>
-                                            @foreach ($airport as $air)
-                                                {{ $fly->id_to_airport == $air->id_airport ? $air->name : '' }}
-                                            @endforeach
-                                        </td>
-                                        <td>{{ $fly->departure_time }}</td>
-                                        <td>{{ $fly->arrival_time }}</td>
-                                        <td>{{ $fly->status_flight }}</td>
-                                        <td>
-                                            <a href="{{ route('deleteFlight',['id'=>$fly->id_flight]) }}" onclick="return confirm('Are you sure ?');" class="btn btn-danger">Delete</a>
-                                            <a href="{{ route('editFlight',['id'=>$fly->id_flight]) }}" class="btn btn-info">Edit</a>
-                                        </td>
-                                        <td>{{ $fly->seat }}</td>
+                                        
                                     </tr>
                                     @php
                                         $stt++;

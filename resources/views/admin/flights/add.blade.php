@@ -54,10 +54,10 @@
                 <div class="form-group">
                     <label>From Airport</label>
                     <div>
-                        <select id="select1" onchange="disableSelectedOption1()" name="id_form_airport" class="selectpicker form-control" data-style="btn-light">
-                            <option value="">Choose which one</option>
-                            @foreach ($airport as $air)
-                                <option value="{{ $air->id_airport }}">{{ $air->name }}</option>
+                        <select id="select1"  name="id_form_airport" class="selectpicker form-control" data-style="btn-light">
+                            <option >Choose which one</option>
+                            @foreach ($airport as $air1)
+                                <option value="{{ $air1->id_airport }}">{{ $air1->name }}</option>
                             @endforeach
                         </select>
 
@@ -66,10 +66,10 @@
                 <div class="form-group">
                     <label>To Airport</label>
                     <div>
-                        <select id="select2" onchange="disableSelectedOption2()" name="id_to_airport" class="selectpicker form-control" data-style="btn-light">
-                            <option value="">Choose which one</option>
-                            @foreach ($airport as $air)
-                                <option value="{{ $air->id_airport }}">{{ $air->name }}</option>
+                        <select id="select2"  name="id_to_airport" class="selectpicker form-control" data-style="btn-light">
+                            <option >Choose which one</option>
+                            @foreach ($airport as $air2)
+                                <option value="{{ $air2->id_airport }}">{{ $air2->name }}</option>
                             @endforeach
                         </select>
 
@@ -77,13 +77,18 @@
                 </div>
                 <div class="form-group">
                     <label>Departure Time</label>
-                    <input type="text" class="form-control" name="departure_time" data-toggle="input-mask" data-mask-format="00/00/0000 00:00:00">
-                    <br><span class="font-13 text-muted">e.g "DD/MM/YYYY HH:MM:SS"</span> 
+                    <input type="text" class="form-control" name="departure_time" data-toggle="input-mask" data-mask-format="0000-00-00 00:00:00">
+                    <br><span class="font-13 text-muted">e.g "YYYY-MM-DD HH:MM:SS"</span> 
                 </div>
                 <div class="form-group">
                     <label>Arrival Time</label>
-                    <input type="text" class="form-control" name="arrival_time" data-toggle="input-mask" data-mask-format="00/00/0000 00:00:00">
-                    <br><span class="font-13 text-muted">e.g "DD/MM/YYYY HH:MM:SS"</span>
+                    <input type="text" class="form-control" name="arrival_time" data-toggle="input-mask" data-mask-format="0000-00-00 00:00:00">
+                    <br><span class="font-13 text-muted">e.g "YYYY-MM-DD HH:MM:SS"</span>
+                </div>
+                <div class="form-group">
+                    <label>Seat</label>
+                    <input type="text" name="seat" class="form-control" placeholder="Type something">
+                    
                 </div>
                 <div class="form-group">
                     <label>Status Flight</label>

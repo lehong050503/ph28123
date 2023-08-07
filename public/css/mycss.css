@@ -47,9 +47,6 @@
 
 
 
-
-
-
 .panels{
   background:#fffffff6;
   box-shadow: 0 1rem 1rem #0000006d;
@@ -64,6 +61,10 @@
 .panel{
   display:none;
   animation: fadein .8s;
+}
+.tabs .tab{
+  font-weight: 900;
+  margin: 10px;
 }
 @keyframes fadein {
     from {
@@ -94,4 +95,70 @@
 
 .error-help-block{
   color: red;
+}
+
+/* List Ticket */
+.ticket {
+  width: 100%;
+  height: 360px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  margin-top: 100px;
+}
+
+.ticket-header {
+  background-color: #16582C;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.ticket-header h1 {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.ticket-body {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.col {
+  width: 70%;
+  margin-bottom: 10px;
+}
+.left{
+  width: 650px;
+}
+.right{
+  width: 250px;
+  padding-top: 50px;
+  margin-left: 90px;
+}
+.item-value {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.dat{
+  border-radius: 10px;
+  padding: 10px 30px;
+}
+.ticket-footer {
+  background-color: #f0f0f0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ticket-footer p {
+  font-size: 14px;
+  color: #777;
 }

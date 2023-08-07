@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class FlightRequest extends FormRequest
+class TicketRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,13 +24,12 @@ class FlightRequest extends FormRequest
     public function rules()
     {
         return [
-            'id_airline' => 'required',
-            'id_form_airport' => 'required',
-            'id_to_airport' => 'required',
-            'departure_time' => 'required',
-            'arrival_time' => 'required',
+            'image' => 'required',
+            'class' => 'required',
+            'price' => 'required',
             'seat' => 'required',
-            'status_flight' => 'required',
+            'status_ticket' => 'required',
+
         ];
     }
 }

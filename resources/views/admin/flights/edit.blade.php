@@ -87,6 +87,11 @@
                     <br><span class="font-13 text-muted">e.g "DD/MM/YYYY HH:MM:SS"</span>
                 </div>
                 <div class="form-group">
+                    <label>Seat</label>
+                    <input type="text" value="{{ $flights->seat }}" name="seat" class="form-control" placeholder="Type something">
+                    
+                </div>
+                <div class="form-group">
                     <label>Status Flight</label>
                     <textarea name="status_flight" class="form-control" cols="10" placeholder="Type something">{{ $flights->status_flight }}</textarea>
                     

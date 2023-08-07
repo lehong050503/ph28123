@@ -90,7 +90,7 @@
                 <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
                     <div class="navbar-nav ml-auto py-0">
                         <a href="{{ url('/') }}" class="nav-item nav-link active">Home</a>
-                        <a href="{{ url('/') }}" class="nav-item nav-link">About</a>
+                        <a href="{{ url('/ticket') }}" class="nav-item nav-link">Tickets</a>
                         <a href="{{ url('/') }}" class="nav-item nav-link">Services</a>
                         <a href="{{ url('/') }}" class="nav-item nav-link">Tour Packages</a>
                         <div class="nav-item dropdown">
